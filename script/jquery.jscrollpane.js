@@ -222,14 +222,10 @@
 				}
 
 				if (settings.autoReinitialise && !reinitialiseInterval) {
-					pane.data('jspPaneHeight', pane.height());
 					reinitialiseInterval = setInterval(
 						function()
 						{
-							if (pane.height() != pane.data('jspPaneHeight')) {
-								pane.data('jspPaneHeight', pane.height());
-								initialise(settings);
-							}
+							initialise(settings);
 						},
 						settings.autoReinitialiseDelay
 					);
